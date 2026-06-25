@@ -1,11 +1,11 @@
 # Online Examination System
 
-A web-based Online Examination System developed using Java Servlets, JSP, JDBC, and MySQL. The application enables students to take online examinations securely while allowing administrators to manage exams, questions, and users.
+Online Examination System is a web-based examination platform developed using Java Servlets, JSP, JDBC, and MySQL. It enables secure online examinations with role-based access for students and administrators, automatic evaluation, result management, and performance analysis using Power BI.
 
 ## Features
 
 * User Authentication
-* Student & Admin Login
+* Student & Administrator Login
 * Role-Based Access Control
 * Online Timed Examination
 * Multiple Choice Questions (MCQs)
@@ -13,6 +13,32 @@ A web-based Online Examination System developed using Java Servlets, JSP, JDBC, 
 * Exam Result Management
 * MySQL Database Integration
 * Power BI Performance Analysis
+
+## Architecture
+
+```text
+                    +----------------------+
+                    |      Browser         |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    |   Apache Tomcat      |
+                    +----------+-----------+
+                               |
+                +--------------+--------------+
+                |                             |
+                ▼                             ▼
+         Java Servlets                  JSP Pages
+                |
+                ▼
+              JDBC
+                |
+                ▼
+        +------------------+
+        |  MySQL Database  |
+        +------------------+
+```
 
 ## Tech Stack
 
@@ -24,8 +50,23 @@ A web-based Online Examination System developed using Java Servlets, JSP, JDBC, 
 * HTML
 * CSS
 * JavaScript
-* Power BI
 * Apache Tomcat
+* Power BI
+
+## 🛠️ Technologies Used
+
+| Technology    | Purpose                             |
+| ------------- | ----------------------------------- |
+| Java          | Core programming language           |
+| Java Servlets | Backend request handling            |
+| JSP           | Dynamic web page development        |
+| JDBC          | Database connectivity               |
+| MySQL         | Relational database management      |
+| HTML          | Web page structure                  |
+| CSS           | User interface styling              |
+| JavaScript    | Client-side interactions            |
+| Apache Tomcat | Application server                  |
+| Power BI      | Performance analytics and reporting |
 
 ## Project Structure
 
@@ -60,7 +101,7 @@ OnlineExaminationSystem/
 * Login
 * View Available Exams
 * Start Examination
-* Submit Exam
+* Submit Examination
 * View Results
 
 ### Administrator
@@ -68,10 +109,14 @@ OnlineExaminationSystem/
 * Manage Students
 * Manage Exams
 * Manage Questions
-* View Exam Results
-* Performance Analysis
+* View Examination Results
+* Performance Analysis Dashboard
 
 ## Database
+
+The application uses MySQL for persistent data storage.
+
+Main database tables include:
 
 * Users
 * Exams
@@ -79,16 +124,29 @@ OnlineExaminationSystem/
 * Answers
 * Results
 
+## Workflow
+
+1. Student registers or logs into the system.
+2. Administrator creates examinations and manages questions.
+3. Student selects an available examination.
+4. Student completes the timed examination.
+5. Answers are evaluated automatically.
+6. Results are stored in the MySQL database.
+7. Performance reports are analyzed using Power BI.
+
 ## Power BI Analysis
 
-Examination data exported from the database was analyzed using Power BI.
+Examination data is exported from the MySQL database and analyzed using Power BI.
 
-Analysis includes:
+The dashboard provides insights such as:
 
+* Total Students
 * Correct Answers
 * Incorrect Answers
 * Unattempted Questions
 * Student Performance Statistics
+* Score Distribution
+* Overall Examination Analytics
 
 ## Getting Started
 
@@ -100,27 +158,31 @@ git clone https://github.com/koyaumamaheswar14-cmd/Online-Examination-System.git
 
 ### Requirements
 
-* JDK 17+
+* JDK 17 or later
 * Apache Tomcat
 * MySQL
 * Eclipse IDE
 
-### Run Project
+### Run the Project
 
-1. Import the project into Eclipse.
-2. Configure Apache Tomcat.
-3. Create the MySQL database.
-4. Update database credentials.
-5. Run the project on Tomcat.
+1. Clone the repository.
+2. Import the project into Eclipse.
+3. Configure Apache Tomcat.
+4. Create the MySQL database.
+5. Update the database credentials.
+6. Run the project on the Tomcat server.
+7. Access the application through your web browser.
 
 ## Future Improvements
 
+* JWT Authentication & Authorization
 * Email Notifications
-* JWT Authentication
 * Question Categories
 * Leaderboard
 * Certificate Generation
-* AI-based Performance Analytics
+* AI-Based Performance Analytics
+* Responsive User Interface
+* Online Proctoring Support
 
 ## Author
 
